@@ -13,8 +13,8 @@
 	if($conn -> connect_error) {
 		die('Connection Failed: ' . $conn -> connect_error);
 	} else {
-		$stmt = $conn->prepare('Insert into dbconnect(fname, lname, gender) values(?, ?, ?)');	//dbconnect hoilo tableName. 3ta '?' mane 3ta column er value, ja amra html form a input krbo
-		$stmt -> bind_param('sss', $fname, $lname, $gender);	//'s' for string, integer thakle 'i'
+		$stmt = $conn->prepare('Insert into dbconnect(fname, lname, gender) values(?, ?, ?)');
+		$stmt -> bind_param('sss', $fname, $lname, $gender);
 		$stmt -> execute();
 		echo "Form Connected Successfully";
 		$stmt -> close();
